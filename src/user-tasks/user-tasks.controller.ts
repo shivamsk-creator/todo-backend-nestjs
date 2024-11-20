@@ -3,7 +3,7 @@ import { UserTasksService } from './user-tasks.service';
 import { CreateUserTaskDto } from './dto/create-user-task.dto';
 import { UpdateUserTaskDto } from './dto/update-user-task.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { AuthGuard, AuthRequest } from 'src/auth/auth.guard';
+import { AuthGuard, AuthRequest } from '../auth/auth.guard';
 
 @ApiTags("User Tasks")
 @Controller('user-tasks')
