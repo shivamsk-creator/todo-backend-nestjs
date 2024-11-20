@@ -13,7 +13,7 @@ export class UserTasksService {
   ) { }
 
   async create(createUserTaskDto: CreateUserTaskDto, auth: AuthInfo) {
-    const existTask = await this.userTaskModel.findOne({ name: createUserTaskDto.name, })
+    const existTask = await this.userTaskModel.findOne({ name: createUserTaskDto.name, user: new Types.ObjectId(auth._id) })
     if (existTask) {
       throw new HttpException({ error_description: "This task is already added", error_code: 'TASK_ALREADY_EXIST' }, HttpStatus.BAD_REQUEST);
     }
