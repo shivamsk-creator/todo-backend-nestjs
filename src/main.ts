@@ -7,7 +7,7 @@ async function bootstrap() {
   console.log("server running on ", process.env.PORT);
 
   app.enableCors({
-    origin: "*", // Replace with the actual origin of your Next.js app
+    origin: 'http://localhost:3000', // Replace with the actual origin of your Next.js app
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });

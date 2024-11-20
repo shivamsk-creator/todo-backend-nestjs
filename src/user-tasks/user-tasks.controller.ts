@@ -35,6 +35,8 @@ export class UserTasksController {
   @UseGuards(AuthGuard)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserTaskDto: UpdateUserTaskDto, @Request() req: AuthRequest) {
+    console.log("updateUserTaskDto=>", updateUserTaskDto, id);
+
     return this.userTasksService.update(id, updateUserTaskDto, req.auth);
   }
 
