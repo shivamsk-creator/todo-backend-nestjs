@@ -22,7 +22,7 @@ export class UserTasksService {
   }
 
   async findAll(auth: AuthInfo) {
-    const userTasks = await this.userTaskModel.find({ user: new Types.ObjectId(auth._id) }, {}, { lean: true });
+    const userTasks = await this.userTaskModel.find({ user: new Types.ObjectId(auth._id) }, {}, { lean: true }).sort({ createdAt: -1 });
     return userTasks;
   }
 

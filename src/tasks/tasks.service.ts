@@ -21,7 +21,7 @@ export class TasksService {
   }
 
   async findAll() {
-    const tasks = await this.taskModel.find();
+    const tasks = await this.taskModel.find().sort({ createdAt: -1 })
     return tasks;
   }
 

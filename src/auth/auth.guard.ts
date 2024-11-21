@@ -41,7 +41,7 @@ export class AuthGuard implements CanActivate {
 
             request['auth'] = payload;
         } catch {
-            throw new HttpException({ error_description: 'Token invalid or expired, Please login again', error_code: 'INVALID_TOKEN' }, HttpStatus.FORBIDDEN);
+            throw new HttpException({ error_description: 'Token invalid or expired, Please login again', error_code: 'INVALID_TOKEN' }, HttpStatus.UNAUTHORIZED);
         }
         return true;
     }
