@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request, Put } from '@nestjs/common';
 import { UserTasksService } from './user-tasks.service';
 import { CreateUserTaskDto } from './dto/create-user-task.dto';
 import { UpdateUserTaskDto } from './dto/update-user-task.dto';
@@ -33,7 +33,7 @@ export class UserTasksController {
 
   @ApiBearerAuth("authentication")
   @UseGuards(AuthGuard)
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateUserTaskDto: UpdateUserTaskDto, @Request() req: AuthRequest) {
     console.log("updateUserTaskDto=>", updateUserTaskDto, id);
 
